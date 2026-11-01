@@ -1,0 +1,59 @@
+{
+    "name": "soe-moe/laravel-module-generator",
+    "description": "Artisan commands for scaffolding modular Laravel applications, with optional Inertia.js (React or Vue) support.",
+    "keywords": [
+        "laravel",
+        "module",
+        "modules",
+        "modular",
+        "generator",
+        "scaffolding",
+        "artisan",
+        "inertia"
+    ],
+    "homepage": "https://github.com/Soe-Moe/laravel-module-generator",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Soe Moe Oo",
+            "email": "soemoeoo1111@gmail.com",
+            "homepage": "https://github.com/Soe-Moe"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Soe-Moe/laravel-module-generator/issues",
+        "source": "https://github.com/Soe-Moe/laravel-module-generator"
+    },
+    "autoload": {
+        "psr-4": {
+            "SoeMoe\\ModuleGenerator\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/console": "^11.0 || ^12.0",
+        "illuminate/support": "^11.0 || ^12.0",
+        "wikimedia/composer-merge-plugin": "^2.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "pestphp/pest": "^2.0 || ^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "wikimedia/composer-merge-plugin": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SoeMoe\\ModuleGenerator\\ModuleGeneratorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

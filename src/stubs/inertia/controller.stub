@@ -1,0 +1,14 @@
+<?php
+
+namespace Modules\{{module}}\Http\Controllers;
+
+use Illuminate\Routing\Controller;
+use Inertia\Inertia;
+
+class {{module}}Controller extends Controller
+{
+    public function index()
+    {
+        return Inertia::render('{{module}}/Index');
+    }
+}

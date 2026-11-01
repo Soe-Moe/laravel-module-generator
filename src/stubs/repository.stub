@@ -1,0 +1,35 @@
+<?php
+
+namespace Modules\{{module}}\Repositories;
+
+use Modules\{{module}}\Models\{{model}};
+use Illuminate\Database\Eloquent\Collection;
+
+class {{class}}
+{
+    public function all(): Collection
+    {
+        return {{model}}::all();
+    }
+
+    public function find(int $id): ?{{model}}
+    {
+        return {{model}}::find($id);
+    }
+
+    public function create(array $data): {{model}}
+    {
+        return {{model}}::create($data);
+    }
+
+    public function update(int $id, array $data): bool
+    {
+        $item = {{model}}::findOrFail($id);
+        return $item->update($data);
+    }
+
+    public function delete(int $id): bool
+    {
+        return {{model}}::destroy($id) > 0;
+    }
+}

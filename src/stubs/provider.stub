@@ -1,0 +1,71 @@
+<?php
+
+namespace Modules\{{module}}\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
+
+class {{module}}ServiceProvider extends ServiceProvider
+{
+    protected string $modulePath;
+
+    public function boot(): void
+    {
+        $this->initializeModulePath();
+        $this->bootModuleServices();
+    }
+
+    public function register(): void
+    {
+        $this->registerModuleServices();
+    }
+
+    protected function initializeModulePath(): void
+    {
+        $this->modulePath = __DIR__ . '/../../';
+    }
+
+    protected function bootModuleServices(): void
+    {
+        $this->registerRoutes();
+        $this->loadModuleViews();
+        $this->loadModuleMigrations();
+        $this->loadModuleConfig();
+        $this->loadModuleTranslations();
+    }
+
+    protected function registerModuleServices(): void
+    {
+        // Add any module-specific service bindings or registrations here
+    }
+
+
+    protected function registerRoutes(): void
+    {
+        $router = $this->app->make(Router::class);
+        $router->middleware('web')->group(function () {
+            require $this->modulePath.'routes/web.php';
+        });
+    }
+
+    protected function loadModuleViews(): void
+    {
+        $this->loadViewsFrom($this->modulePath . 'resources/views', '{{module}}');
+    }
+
+    protected function loadModuleMigrations(): void
+    {
+        $this->loadMigrationsFrom($this->modulePath . 'database/migrations');
+    }
+
+    protected function loadModuleConfig(): void
+    {
+        $this->mergeConfigFrom($this->modulePath . 'config/{{module}}.php', '{{module}}');
+    }
+
+    protected function loadModuleTranslations(): void
+    {
+        $this->loadTranslationsFrom($this->modulePath . 'resources/lang', '{{module}}');
+        $this->loadJsonTranslationsFrom($this->modulePath . 'resources/lang');
+    }
+}
