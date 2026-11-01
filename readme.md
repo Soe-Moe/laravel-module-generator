@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/soe-moe/laravel-module-generator.svg)](https://packagist.org/packages/soe-moe/laravel-module-generator)
 [![Total Downloads](https://img.shields.io/packagist/dt/soe-moe/laravel-module-generator.svg)](https://packagist.org/packages/soe-moe/laravel-module-generator)
-[![License](https://img.shields.io/packagist/l/soe-moe/laravel-module-generator.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/Soe-Moe/laravel-module-generator.svg)](LICENSE)
 
 A Composer package for scaffolding and managing self-contained modules in Laravel applications. Each module includes its own service provider, routes, views, translations, configuration, migrations, seeders, and PSR-4 autoloading, with optional Inertia.js (React or Vue) support.
 
