@@ -11,7 +11,7 @@ A Composer package for scaffolding and managing self-contained modules in Larave
 ## Requirements
 
 - PHP 8.1 or higher
-- Laravel 11 or 12 (uses `bootstrap/providers.php` for automatic service provider registration)
+- Laravel 11, 12, or 13 (uses `bootstrap/providers.php` for automatic service provider registration)
 - Composer with `wikimedia/composer-merge-plugin`
 
 ---
